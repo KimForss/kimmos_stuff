@@ -87,8 +87,8 @@
         {
           "role": "worker",
           "//": "Lists of IPs are required if subnet_admin and subnet_db uses existing subnet",
-          "admin_nic_ips": ["10.4.0.16"],
-          "db_nic_ips": ["10.4.1.16"]
+          "admin_nic_ips": ["10.4.0.16","10.4.0.17"],
+          "db_nic_ips": ["10.4.1.16","10.4.1.17"]
         }
       ],
       "loadbalancer": {
