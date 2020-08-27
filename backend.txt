@@ -1,0 +1,4 @@
+resource_group_name 	= "proto-weeu-sap_library"
+storage_account_name 	= "protoweeutfstate523d"
+container_name		= "sapsystem"
+key			= "proto-weeu-sapprod_foo-kf7.tfstate"

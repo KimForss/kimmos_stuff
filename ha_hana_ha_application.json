@@ -1,0 +1,184 @@
+{
+  "infrastructure": {
+    "region": "westeurope",
+    "landscape": "proto",
+    "codename": "Foo",
+
+    "ppg": {
+      "is_existing": "false"
+    },
+    "vnets": {
+      "management": {
+        "saplib_resource_group_name": "proto-weeu-sap_library",
+        "tfstate_storage_account_name": "protoweeutfstate523d",
+        "deployer_tfstate_key": "deployer.terraform.tfstate"
+      },
+      "sap": {
+        "is_existing": true,
+        "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet",
+        "subnet_admin": {
+          "is_existing": true,
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_admin-subnet",
+          "nsg": {
+            "is_existing": true,
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_adminSubnet-nsg"
+          }
+        },
+        "subnet_db": {
+          "is_existing": true,
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_db-subnet",
+          "nsg": {
+            "is_existing": true,
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_dbSubnet-nsg"
+          }
+        },
+        "subnet_app": {
+          "is_existing": true,
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_app-subnet",
+          "nsg": {
+            "is_existing": true,
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_appSubnet-nsg"
+          }
+        },
+        "subnet_web": {
+          "is_existing": true,
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_web-subnet",
+          "nsg": {
+            "is_existing": true,
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_webSubnet-nsg"
+          }
+        }
+      }
+    }
+  },
+  "jumpboxes": {
+    "windows": [],
+    "linux": []
+  },
+  "databases": [
+    {
+      "platform": "HANA",
+      "db_version": "2.00.043",
+      "os": {
+        "publisher": "suse",
+        "offer": "sles-sap-12-sp5",
+        "sku": "gen1"
+      },
+      "size": "Demo",
+      "filesystem": "xfs",
+      "high_availability": false,
+      "authentication": {
+        "type": "key",
+        "username": "azureadm"
+      },
+      "instance": {
+        "sid": "KF4",
+        "instance_number": "00"
+      },
+      "credentials": {
+        "db_systemdb_password": "Manager1",
+        "os_sidadm_password": "Help4you",
+        "os_sapadm_password": "Help4you",
+        "xsa_admin_password": "Manager1",
+        "cockpit_admin_password": "Manager1",
+        "ha_cluster_password": ""
+      },
+      "dbnodes": [
+        {
+          "role": "worker",
+          "//": "Lists of IPs are required if subnet_admin and subnet_db uses existing subnet",
+          "admin_nic_ips": ["10.4.0.16"],
+          "db_nic_ips": ["10.4.1.16"]
+        }
+      ],
+      "loadbalancer": {
+        "frontend_ip": "10.4.1.20"
+      }
+    }
+  ],
+  "application": {
+    "enable_deployment": true,
+    "sid": "kf2",
+    "scs_instance_number": "01",
+    "ers_instance_number": "02",
+    "scs_high_availability": true,
+    "application_server_count": 2,
+    "webdispatcher_count": 2,
+    "//": "Lists of IPs are required if subnet_app uses existing subnet",
+    "app_nic_ips": ["10.4.2.50", "10.4.2.51"],
+    "scs_lb_ips": ["10.4.2.40", "10.4.2.41"],
+    "scs_nic_ips": ["10.4.2.45", "10.4.2.46"],
+    "web_lb_ips": ["10.4.3.42"],
+    "web_nic_ips": ["10.4.3.60", "10.4.3.61"],
+    "authentication": {
+      "type": "key",
+      "username": "azureadm"
+    },
+    "os": {
+      "os_type": "Linux",
+      "publisher": "suse",
+      "offer": "sles-sap-12-sp5",
+      "sku": "gen1",
+      "version": "latest"
+    }
+  },
+
+  "software": {
+    "storage_account_sapbits": {
+      "is_existing": false,
+      "account_tier": "Premium",
+      "account_replication_type": "LRS",
+      "account_kind": "FileStorage",
+      "file_share_name": "bits",
+      "saplib_resource_group_name": "proto-weeu-sap_library",
+      "tfstate_storage_account_name": "protoweeutfstate523d",
+      "saplib_tfstate_key": "proto-weeu-sap_library.terraform.tfstate"
+    },
+    "downloader": {
+      "credentials": {
+        "sap_user": "",
+        "sap_password": ""
+      },
+      "scenarios": [
+        {
+          "scenario_type": "DB",
+          "product_name": "HANA",
+          "product_version": "2.0",
+          "os_type": "LINUX_X64",
+          "os_version": "SLES12.3",
+          "components": ["PLATFORM"]
+        },
+        {
+          "scenario_type": "RTI",
+          "product_name": "RTI",
+          "os_type": "LINUX_X64"
+        },
+        {
+          "scenario_type": "BASTION",
+          "os_type": "NT_X64"
+        },
+        {
+          "scenario_type": "BASTION",
+          "os_type": "LINUX_X64"
+        }
+      ],
+      "debug": {
+        "enabled": false,
+        "cert": "charles.pem",
+        "proxies": {
+          "http": "http://127.0.0.1:8888",
+          "https": "https://127.0.0.1:8888"
+        }
+      }
+    }
+  },
+  "sshkey": {
+    "path_to_public_key": "sshkey.pub",
+    "path_to_private_key": "sshkey"
+  },
+  "options": {
+    "enable_secure_transfer": true,
+    "ansible_execution": false,
+    "enable_prometheus": true
+  }
+}
