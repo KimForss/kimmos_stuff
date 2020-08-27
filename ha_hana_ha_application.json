@@ -18,34 +18,34 @@
         "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet",
         "subnet_admin": {
           "is_existing": true,
-          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_admin-subnet",
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_admin-subnet",
           "nsg": {
             "is_existing": true,
-            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_adminSubnet-nsg"
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_adminSubnet-nsg"
           }
         },
         "subnet_db": {
           "is_existing": true,
-          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_db-subnet",
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_db-subnet",
           "nsg": {
             "is_existing": true,
-            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_dbSubnet-nsg"
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_dbSubnet-nsg"
           }
         },
         "subnet_app": {
           "is_existing": true,
-          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_app-subnet",
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_app-subnet",
           "nsg": {
             "is_existing": true,
-            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_appSubnet-nsg"
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_appSubnet-nsg"
           }
         },
         "subnet_web": {
           "is_existing": true,
-          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_web-subnet",
+          "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/virtualNetworks/PROTO-WEEU-SAPPROTO-vnet/subnets/PROTO-WEEU-SAPPROTO_web-subnet",
           "nsg": {
             "is_existing": true,
-            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/proto-weue-network/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_webSubnet-nsg"
+            "arm_id": "/subscriptions/8d8422a3-a9c1-4fe9-b880-adcf61557c71/resourceGroups/PROTO-WEEU-SAPPROTO-INFRASTRUCTURE/providers/Microsoft.Network/networkSecurityGroups/PROTO-WEEU-SAPPROTO_webSubnet-nsg"
           }
         }
       }
